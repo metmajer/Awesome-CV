@@ -780,6 +780,21 @@
   \end{tabular*}
 }
 
+% Define an entry of cv information(recommendation)
+% Usage: \cvrecommendation{<donor>}{<title>}{<date>}{<description>}
+\newcommand*{\cvrecommendation}[4]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \entrytitlestyle{#1} & \entrydatestyle{#3} \\
+    \entrypositionstyle{#2} & \\
+    \multicolumn{2}{L{\textwidth}}{
+      \vspace{-4.0mm} \item \begin{justify} \paragraphstyle{#4} \end{justify}
+    }
+  \end{tabular*}%
+}
+
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}
