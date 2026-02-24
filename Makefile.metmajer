@@ -1,0 +1,17 @@
+.PHONY: examples
+
+CC = lualatex
+FILES_DIR = metmajer
+RESUME_DIR = $(FILES_DIR)/resume
+RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
+
+examples: $(foreach x, coverletter resume, $x.pdf)
+
+resume.pdf: $(FILES_DIR)/resume.tex $(RESUME_SRCS)
+	$(CC) -output-directory=$(FILES_DIR) $<
+
+coverletter.pdf: $(FILES_DIR)/coverletter.tex
+	$(CC) -output-directory=$(FILES_DIR) $<
+
+clean:
+	rm -rf $(FILES_DIR)/*.aux $(FILES_DIR)/*.log $(FILES_DIR)/*.out $(FILES_DIR)/*.pdf
