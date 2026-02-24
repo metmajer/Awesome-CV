@@ -819,15 +819,22 @@
   \vspace{-2.0mm}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
-    \tabularx{\textwidth}{r>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
+    \tabularx{\textwidth}{
+      r>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X
+      r>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X
+    }
 }{%
-\endtabularx\par
+    \endtabularx\par
 }
 
 % Define a line of cv information(skill)
-% Usage: \cvskill{<type>}{<skillset>}
-\newcommand*{\cvskill}[2]{%
-  \skilltypestyle{#1} & \leavevmode\skillsetstyle{#2} \\
+% Usage: \cvskill{<type1>}{<skillset1>} or \cvskill{<type1>}{<skillset1>}{<type2>}{<skillset2>}
+\NewDocumentCommand{\cvskill}{m m g g}{%
+  \skilltypestyle{#1} & \leavevmode\skillsetstyle{#2}
+  \IfValueTF{#3}{%
+     & \skilltypestyle{#3} & \leavevmode\skillsetstyle{#4}%
+  }{%
+  }\\
 }
 
 % Define an environment for cvitems(for cventry)
