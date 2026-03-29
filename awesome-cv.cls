@@ -233,6 +233,12 @@
 \newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 
+% For elements of engagement
+\newcommand*{\activitytitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\engagementtitleboldstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\activitydatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\activitylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{awesome} #1}}
+
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
@@ -811,6 +817,25 @@
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
 \newcommand*{\cvhonor}[4]{%
   \honordatestyle{#4} & \honorpositionstyle{#1}\ifempty{#2}{}{,} \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+}
+
+% Define an environment for cvactivities
+\newenvironment{cvactivities}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2mm}
+
+  \begin{center}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth}}
+}{%
+    \end{tabular*}
+  \end{center}
+}
+% Define a line of cv information(training, speaking, publication or something else)
+% Usage: \cvactivity{<engagement>}{<location>}{<date>}
+\newcommand*{\cvactivity}[3]{%
+  \activitydatestyle{#3} & \activitytitlestyle{#1}\ifempty{#2}{}{,} \activitylocationstyle{#2} \\
 }
 
 % Define an environment for cvskill
