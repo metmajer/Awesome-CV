@@ -409,6 +409,14 @@
 % Usage: \telegram{<Telegram username>}
 \newcommand*{\telegram}[1]{\def\@telegram{#1}}
 
+% Defines writer's slideshare (optional)
+% Usage: \slideshare{<slideshare account>}
+\newcommand*{\slideshare}[1]{\def\@slideshare{#1}}
+
+% Defines writer's speakerdeck (optional)
+% Usage: \speakerdeck{<speakerdeck account>}
+\newcommand*{\speakerdeck}[1]{\def\@speakerdeck{#1}}
+
 % Defines writer's google scholar profile (optional)
 % Usage: \googlescholar{<googlescholar userid>}{<googlescholar username>}
 % e.g.https://scholar.google.co.uk/citations?user=wpZDx1cAAAAJ
@@ -690,6 +698,18 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \@extrainfo%
+        }%
+      \ifthenelse{\isundefined{\@slideshare}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://slideshare.net/\@slideshare}{\faSlideshare\acvHeaderIconSep\@slideshare}%
+        }%
+      \ifthenelse{\isundefined{\@speakerdeck}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://speakerdeck.com/\@speakerdeck}{\vtop{\vskip -1.77mm \hbox{\includegraphics[height=1.9mm,keepaspectratio]{./images/speakerdeck-logo.pdf}}}\acvHeaderIconSep\@speakerdeck}%
         }%
     } \\[\acvHeaderAfterSocialSkip]%
     \ifthenelse{\isundefined{\@quote}}%
