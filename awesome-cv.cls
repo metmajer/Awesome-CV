@@ -233,6 +233,12 @@
 \newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 
+% For elements of engagement
+\newcommand*{\activitytitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\engagementtitleboldstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\activitydatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\activitylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{awesome} #1}}
+
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
@@ -403,6 +409,14 @@
 % Usage: \telegram{<Telegram username>}
 \newcommand*{\telegram}[1]{\def\@telegram{#1}}
 
+% Defines writer's slideshare (optional)
+% Usage: \slideshare{<slideshare account>}
+\newcommand*{\slideshare}[1]{\def\@slideshare{#1}}
+
+% Defines writer's speakerdeck (optional)
+% Usage: \speakerdeck{<speakerdeck account>}
+\newcommand*{\speakerdeck}[1]{\def\@speakerdeck{#1}}
+
 % Defines writer's google scholar profile (optional)
 % Usage: \googlescholar{<googlescholar userid>}{<googlescholar username>}
 % e.g.https://scholar.google.co.uk/citations?user=wpZDx1cAAAAJ
@@ -466,13 +480,13 @@
 %% Define helper macros a user can change easily
 % Header
 \newcommand{\acvHeaderNameDelim}{\space}
-\newcommand{\acvHeaderAfterNameSkip}{.4mm}
-\newcommand{\acvHeaderAfterPositionSkip}{.4mm}
-\newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
+\newcommand{\acvHeaderAfterNameSkip}{3mm}
+\newcommand{\acvHeaderAfterPositionSkip}{1mm}
+\newcommand{\acvHeaderAfterAddressSkip}{0mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\BeginAccSupp{ActualText={}}\quad\textbar\quad\EndAccSupp{}}
-\newcommand{\acvHeaderAfterSocialSkip}{6mm}
-\newcommand{\acvHeaderAfterQuoteSkip}{5mm}
+\newcommand{\acvHeaderAfterSocialSkip}{5mm}
+\newcommand{\acvHeaderAfterQuoteSkip}{0mm}
 
 % Others
 \newcommand{\acvSectionTopSkip}{3mm}
@@ -571,6 +585,12 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{\@homepage}{\faAlt{homepage: \@homepage}{\faHouseChimney}{\@homepage}}%
         }%
+      \ifthenelse{\isundefined{\@linkedin}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://www.linkedin.com/in/\@linkedin}{\faAlt{LinkedIn: /in/\@linkedin}{\faLinkedin}{\@linkedin}}%
+        }%
       \ifthenelse{\isundefined{\@github}}%
         {}%
         {%
@@ -594,12 +614,6 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://stackoverflow.com/users/\@stackoverflowid}{\faAlt{StackOverflow: @\@stackoverflowname}{\faStackOverflow}{\@stackoverflowname}}%
-        }%
-      \ifthenelse{\isundefined{\@linkedin}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faAlt{LinkedIn: /in/\@linkedin}{\faLinkedin}{\@linkedin}}%
         }%
       \ifthenelse{\isundefined{\@orcid}}%
         {}%
@@ -684,6 +698,18 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \@extrainfo%
+        }%
+      \ifthenelse{\isundefined{\@slideshare}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://slideshare.net/\@slideshare}{\faSlideshare\acvHeaderIconSep\@slideshare}%
+        }%
+      \ifthenelse{\isundefined{\@speakerdeck}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://speakerdeck.com/\@speakerdeck}{\vtop{\vskip -1.77mm \hbox{\includegraphics[height=1.9mm,keepaspectratio]{./images/speakerdeck-logo.pdf}}}\acvHeaderIconSep\@speakerdeck}%
         }%
     } \\[\acvHeaderAfterSocialSkip]%
     \ifthenelse{\isundefined{\@quote}}%
@@ -780,6 +806,21 @@
   \end{tabular*}
 }
 
+% Define an entry of cv information(recommendation)
+% Usage: \cvrecommendation{<donor>}{<title>}{<date>}{<description>}
+\newcommand*{\cvrecommendation}[4]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \entrytitlestyle{#1} & \entrydatestyle{#3} \\
+    \entrypositionstyle{#2} & \\
+    \multicolumn{2}{L{\textwidth}}{
+      \vspace{-4.0mm} \item \begin{justify} \paragraphstyle{#4} \end{justify}
+    }
+  \end{tabular*}%
+}
+
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}
@@ -798,21 +839,47 @@
   \honordatestyle{#4} & \honorpositionstyle{#1}\ifempty{#2}{}{,} \honortitlestyle{#2} & \honorlocationstyle{#3} \\
 }
 
+% Define an environment for cvactivities
+\newenvironment{cvactivities}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2mm}
+
+  \begin{center}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth}}
+}{%
+    \end{tabular*}
+  \end{center}
+}
+% Define a line of cv information(training, speaking, publication or something else)
+% Usage: \cvactivity{<engagement>}{<location>}{<date>}
+\newcommand*{\cvactivity}[3]{%
+  \activitydatestyle{#3} & \activitytitlestyle{#1}\ifempty{#2}{}{,} \activitylocationstyle{#2} \\
+}
+
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}
   \vspace{-2.0mm}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
-    \tabularx{\textwidth}{r>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
+    \tabularx{\textwidth}{
+      r>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X
+      r>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X
+    }
 }{%
-\endtabularx\par
+    \endtabularx\par
 }
 
 % Define a line of cv information(skill)
-% Usage: \cvskill{<type>}{<skillset>}
-\newcommand*{\cvskill}[2]{%
-  \skilltypestyle{#1} & \leavevmode\skillsetstyle{#2} \\
+% Usage: \cvskill{<type1>}{<skillset1>} or \cvskill{<type1>}{<skillset1>}{<type2>}{<skillset2>}
+\NewDocumentCommand{\cvskill}{m m g g}{%
+  \skilltypestyle{#1} & \leavevmode\skillsetstyle{#2}
+  \IfValueTF{#3}{%
+     & \skilltypestyle{#3} & \leavevmode\skillsetstyle{#4}%
+  }{%
+  }\\
 }
 
 % Define an environment for cvitems(for cventry)
