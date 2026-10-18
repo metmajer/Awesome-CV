@@ -24,19 +24,7 @@
 \geometry{left=2cm, top=2.5cm, right=2cm, bottom=2cm, footskip=.5cm}
 
 % Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-%\colorlet{awesome}{awesome-red}
-% Uncomment if you would like to specify your own color
 \definecolor{awesome}{HTML}{3D4143} %charcoal
-
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
-% \definecolor{sectiondivider}{HTML}{5D5D5D}
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
@@ -47,86 +35,115 @@
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/center/right
-%\photo[circle,noedge,center]{./metmajer/images/metmajer}
 \name{Martin}{Etmajer}
-\position{Technology \& Product Leader | IT Technology Strategy \& Enterprise Architecture at Boehringer Ingelheim}
-\address{\color{black}{\normalfont{Dipl.-Ing. Martin Etmajer, Coulinstraße 30/12/5, 4020 Linz, Austria}}}
+\position{Enterprise Architect, AI \& Analytics}
+\address{\color{black}{\normalfont{Martin Etmajer, MSc, Coulinstraße 30/12/5, 4020 Linz, Austria}}}
 
-\mobile{+43 (0699) 11430886} 
-%\whatsapp{(+82) 10-9030-1843}
+\mobile{+43 (0699) 11430886}
 \email{martin@etmajer.com}
-%\dateofbirth{January 1st, 1970}
-%\homepage{www.posquit0.com}
 \github{metmajer}
 \linkedin{metmajer}
-% \gitlab{gitlab-id}
-% \stackoverflow{SO-id}{SO-name}
-% \twitter{@twit}
-% \x{x-id}
-% \skype{skype-id}
-% \reddit{reddit-id}
-% \medium{madium-id}
-% \kaggle{kaggle-id}
-% \hackerrank{hackerrank-id}
-% \telegram{telegram-username}
-% \googlescholar{googlescholar-id}{name-to-display}
-%% \firstname and \lastname will be used
-% \googlescholar{googlescholar-id}{}
-% \extrainfo{extra information}
-% \speakerdeck{GetCloudnative}
-% \slideshare{MartinEtmajer}
 
-%\quote{``The important thing is not your process, the important thing is your process for improving your process." \textbf{Henrik Kniberg}}
-\quote{``Simple things should be simple, complex things should be possible." \textbf{Alan Kay}}
+\quote{``The important thing is not your process, the important thing is your process for improving your process." \textbf{Henrik Kniberg}}
 
 %-------------------------------------------------------------------------------
 %	LETTER INFORMATION
-%	All of the below lines must be filled out
 %-------------------------------------------------------------------------------
-% The company being applied to
 \recipient
-  {Company Recruitment Team}
-  {Google Inc.\\1600 Amphitheatre Parkway\\Mountain View, CA 94043}
-% The date on the letter, default is the date of compilation
+  {Erste Digital}
+  {Hiring Team\\Vienna, Austria}
 \letterdate{\today}
-% The title of the letter
-\lettertitle{Job Application for Software Engineer}
-% How the letter is opened
-\letteropening{Dear Mr./Ms./Dr. LastName,}
-% How the letter is closed
-\letterclosing{Sincerely,}
-% Any enclosures with the letter
-%\letterenclosure[Attached]{Resumé}
+\lettertitle{Application: Head of Division Architecture \& Innovation}
+\letteropening{Dear Erste Digital Hiring Team,}
+\letterclosing{Best regards,}
+\letterenclosure[Enclosed]{Architecture \& Innovation Leadership Portfolio (following pages)}
 
 
 %-------------------------------------------------------------------------------
 \begin{document}
 
-% Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
 \makecvheader[C]
 
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Dipl.-Ing. Martin Etmajer~~~·~~~Cover Letter}
+  {Martin Etmajer, MSc~~~·~~~Cover Letter}
   {}
 
-% Print the title with above letter informations
 \makelettertitle
 
 %-------------------------------------------------------------------------------
 %	LETTER CONTENT
 %-------------------------------------------------------------------------------
 \begin{cvletter}
+
+I'm applying for the Head of Division Architecture \& Innovation role because it combines architecture, innovation, and leading people into a single mandate. I've worked successfully across all three, and that mix is what interests me here.
+
+I've spent 15+ years turning emerging technology into production-ready capability. For the last 7 years in a regulated pharmaceutical enterprise, under hard compliance requirements much like a bank's. Today I own architecture for the AI \& Analytics domain at Boehringer Ingelheim: I set standards through the Enterprise Architecture Board and steer their implementation across distributed teams. Before that I led the DevSecOps platform as a product, which grew from an engineering tool into a strategic capability adopted across IT and 18 business areas.
+
+Your role asks for measurable business value, portfolio consolidation, technical debt reduction, and early assessment of technology trends to support investment decisions. That's work I already do. I re-engineered IT Change Management for a projected 7-figure annual saving. I helped challenge the status quo and redesign our GxP validation approach, and developed the proof of concept that let an external auditor assess it, showing up to 90\% less compliance effort was achievable. I run technology evaluations to drive portfolio decisions: most recently a 140-hypothesis assessment of whether an integrated cloud platform should extend or replace our best-of-breed stack.
+
+What transfers from pharma to banking: making architecture a steering force in a regulated environment. I've attached a short Architecture \& Innovation Leadership Portfolio with concrete examples.
+
+I'd welcome a conversation about your direction for Erste Digital and the problems you'd want me to take on.
+
 \end{cvletter}
 
-%-------------------------------------------------------------------------------
-% Print the signature and enclosures with above letter informations
 \makeletterclosing
+
+%-------------------------------------------------------------------------------
+%	PORTFOLIO
+%-------------------------------------------------------------------------------
+\newpage
+
+% Portfolio styled to match the letter body (lighter, roomier)
+\newcommand{\plead}[1]{{\bodyfont\bfseries\color{darktext}#1}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+
+
+{\lettertextstyle
+\widowpenalty=10000 \clubpenalty=10000 \raggedbottom
+
+\cvsection{Selected projects}
+
+\plead{Owning the AI \& Analytics target architecture (current role).} I own the target architecture for the AI \& Analytics domain, spanning data science, machine learning, analytics, and agentic AI, and I shape the data platform architecture it builds on. I set domain standards as architecture decision records, bring them to the Enterprise Architecture Board for approval, and steer implementation across distributed teams. Right now, I'm designing the discovery and governance layer for agentic assets, with several IT domains and parts of the business: one place where reusable agents, models, MCP servers, and skills are registered once and made discoverable and governed for both people and agents.
+
+\plead{Architecting the enterprise-wide semantic layer.} Conversational analytics across business data domains is a board-level priority, and it needs one shared semantic layer, so agents reason over certified business meaning, not raw data in isolation. I defined its architecture in our data ecosystem and wove it into our agentic architecture, and I drove the decision to build it as a knowledge graph on open standards, not a vendor's proprietary semantic views that stop at one system's boundary: one standard, no lock-in, consistent answer quality as the use cases grow. I anchored the implementation in a business-led use case.
+
+\plead{Repositioned the DevSecOps platform as a strategic product.} As Head of IT Platform Product \& Engineering I moved the platform from infrastructure to product: a reusable components marketplace, a management plane, a unified UX, and new user groups including data engineers, data analysts, data scientists, and AI/ML engineers. With our remote team of 15, we delivered 4x more major releases per year, 30x better validation testing efficiency, and cut technical onboarding from 30 days to a few hours. The platform grew from an engineering tool into a strategic capability adopted across IT and 18 business areas, and its move into high-criticality GxP areas reduced delivery from weeks to hours.
+
+\plead{Re-engineered and automated IT Change Management.} I led the redesign in the CTO Office and validated it with power users handling high change volume. The process simplified and automated what took 8 hours of manual effort per change. The first go-live covered 65\% of all IT systems on Boehringer's DevSecOps platform and is projected to save a 7-figure sum in annual labor. Further rollouts are planned.
+
+\plead{Redesigned GxP computer system validation.} I helped challenge the status quo and redesign the approach, and I developed the proof of concept that secured external-auditor approval together with Global Quality. It showed up to 90\% less compliance effort was achievable, in a model a regulator accepts. A successful proof of concept, to be taken forward later.
+
+\cvsection{Creating commitment}
+
+These are cases where the decision was contested and the challenge was getting people to commit, not writing the standard.
+
+\plead{One delivery process across autonomous teams.} No shared delivery process existed. Each team improvised its own. I converged them into a single GxP-compliant path from idea to production, a backbone of Boehringer's technology transformation: one way to ship changes, whatever team you're on. The conflict was autonomy versus standardization: teams read a shared process as a constraint. The CTO mandated it, but a mandate opens the door, it doesn't earn adoption. So I made it the fastest path that still holds up to GxP, and co-founded the IT Engineering Academy to close the skill gaps behind the resistance. Early adopters proved the value, and the rest followed.
+
+\plead{Moving the platform into the high-criticality GxP area.} Quality and compliance were on board with the delivery process from the start, as it was already built for GxP. The bar rose where the platform reached into the manufacturing of medical products, the highest criticality level, subject to regular audits. Earning entry took clear risk analyses and stakeholder management to prove the approach holds up under audit. Regulated areas that had taken weeks to deliver a change moved to hours.
+
+\plead{Cutting an over-engineered process without losing its owners.} The change management process had grown heavy with steps that no longer earned their place in an increasingly Agile environment. My job was to take the red pen to it, without losing the team that owned it. They were skeptical at first, and resisted. I worked through it with facts and patience, and simplified the process. When it was done, their verdict was ``we wouldn't have needed Martin for this'', and they took it forward as their own. That was the goal.
+
+\cvsection{Managing trade-offs}
+
+Architecture is about trade-offs, not picking a side.
+
+\plead{Two conflicting compliance worlds, unified into one.} Regulated systems demand control and audit-defensibility, whereas non-regulated systems want speed and low overhead. The two goals conflict. I built the DevSecOps platform and its core delivery process for GxP, and designed non-GxP as a simpler subset of it. Neither side lost. One path serves both, and every simplification applied to all systems on the platform at once.
+
+\cvsection{Prioritizing and terminating}
+
+\plead{Stopping a portal before it built the wrong dependencies.} A team wanted to build a portal over our platforms for specific user segments, wired through point-to-point integrations. That would have blurred the responsibility between platform and delivery teams, broken the portal every time a platform changed, and locked the two teams into permanent coordination overhead. I stopped it, and required a clean platform integration layer instead, owned by the platform team, for the portal team to build on. Same result without the fragility and the shared burden.
+
+\plead{Extend or replace: deciding the future of best-of-breed.} I led a 20-person, multi-site evaluation of an integrated cloud data and AI platform to answer one question: does it extend our best-of-breed architecture, or replace large parts of it? We set out to test exhaustively, 350 hypotheses, then scoped it to 140 to focus first on net-new value, where the platform does what the old stack couldn't, rather than testing every possible path. We derived them from strategic priorities and tested them against defined thresholds, with findings taken to the leadership team and the architecture community.
+
+\plead{Buy versus build against technical debt.} The DevOps platform foundation carried technical debt. I ran a buy-versus-build analysis to decide where to keep building, where to buy, and what to retire, and used it to redesign the foundation. The aim wasn't more platform, but less of the wrong one.
+
+\plead{Shifting focus to what's next.} I'm bringing Wardley Mapping into our technology strategy to make one question explicit for us: what we stop building ourselves and buy instead, to free internal capacity for the work that matters and make space for the innovation topics that have no home here yet.
+
+
+}
 
 \end{document}
