@@ -1,0 +1,156 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Work Experience}
+
+% Prose description with the SAME line height as cvitems bullets
+% (itemize resets the baselineskip; an m-column ignores a direct \fontsize)
+\newenvironment{cvprose}{%
+  \vspace{-4.0mm}\begin{justify}\begin{itemize}[leftmargin=0pt, label={}, nosep, noitemsep]\setlength{\parskip}{0pt}\item\relax
+}{%
+  \end{itemize}\end{justify}\vspace{1.0mm}%
+}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cventry
+    {Enterprise Architect, AI \& Analytics} % Job title
+    {Boehringer Ingelheim} % Organization
+    {Global} % Location
+    {May 2026 - PRESENT} % Date(s)
+    {
+      \begin{cvitems}
+        \item {Leading the \textit{enterprise reference architecture for scaling agentic AI} on behalf of the \textit{Enterprise Architecture Board}, with \textit{reach across all of IT}. Developing it across business areas and IT, together with Security, GxP Compliance, Legal, and Regulatory Affairs. The IT leadership team agreed on its guiding principles and on a \textit{federated model} that strengthens the existing platforms and adds cross-platform services only where they pay off.}
+        \item {Turned the guiding principles into \textit{technology-neutral contracts on open standards} such as OAuth, MCP, and OpenTelemetry, so any platform or service can be plugged in or replaced. Derived \textit{more than 100 requirements} from the contracts for use cases, platforms, enterprise systems, and new optional cross-platform services, covering \textit{security, traceability, observability, governance, interoperability, and reuse}. Presented at the roadmap workshop of the data and integration platform teams and created the urgency to prioritize these requirements, starting with \textit{end-to-end per-user data access for agents}.}
+        \item {Owning the \textit{target architecture} for the AI \& Analytics domain, spanning data science, machine learning, analytics, and agentic AI, and shaping the data platform architecture it builds on. Setting domain standards as \textit{architecture decision records} and bringing them to the \textit{Enterprise Architecture Board} for alignment and approval, steering implementation across distributed architecture and engineering teams.}
+        \item {Led a \textit{20-person task force} across multiple sites evaluating an integrated \textit{cloud data and AI platform} against the existing best-of-breed stack, to decide whether it should \textit{extend the architecture or replace large parts of it}: \textit{140 hypotheses} derived from strategic priorities and tested against defined thresholds, plus vendor management, with findings reported to the leadership team and the architecture community.}
+        \item {Architecting the \textit{enterprise-wide semantic layer}, a board-level priority backed by a business-led use case, so agents reason over relationships and certified business meaning rather than raw data. Drove the decision against vendor-proprietary semantic views and for a \textit{knowledge graph on open standards} such as RDF and Apache Ossie.}
+        \item {Shaped \textit{AI technology strategy} in a cross-functional core team. Designed an \textit{evaluation framework} bringing business and IT stakeholders into hands-on working groups to assess AI applicability across the IT landscape.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {CTO Office \& Enterprise Architecture Board} % Job title
+    {} % Organization
+    {} % Location
+    {Jul. 2025 - Apr. 2026} % Date(s)
+    {
+      \begin{cvitems}
+        \item {Designed a \textit{supplier governance framework} enabling IT teams to integrate and operationalize third-party technologies faster and with less risk: supplier requirements, contractual integration, enablement, and continuous monitoring.}
+        \item {Re-engineered \textit{IT Change Management} and automated \textit{8 hours of manual effort per change}. First go-live covers \textit{65\% of IT systems on the DevSecOps platform}, \textit{projecting 7-figure annual labor savings}.}
+        \item {Developed a proof of concept for a redesigned \textit{GxP computer system validation approach}, showing \textit{up to 90\% less compliance effort} was achievable, with external-auditor approval secured together with Global Quality.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {CIO Advisory} % Job title
+    {} % Organization
+    {} % Location
+    {Oct. 2024 - Apr. 2026} % Date(s)
+    {
+      \begin{cvprose}
+      Advising the CIO and senior IT leadership alongside my primary role, on technology strategy, organizational design, and strategic initiatives spanning AI adoption, platform evolution, and engineering excellence.
+      \end{cvprose}
+    }
+
+    \vspace{-4.0mm}
+    \newpage
+
+%---------------------------------------------------------
+  \cventry
+    {Head of IT Platform Product \& Engineering} % Job title
+    {} % Organization
+    {} % Location
+    {Oct. 2022 - Dec. 2025} % Date(s)
+    {
+      \begin{cvitems}
+        \item {Positioned the \textit{DevSecOps platform} as a strategic product: \textit{reusable components marketplace, management plane, unified UX}, and new user groups including data engineers, analysts, scientists, and AI/ML engineers.}
+        \item {Built a \textit{high-performing remote team of 15}; delivered \textit{4x more major releases per year}, \textit{30x validation testing efficiency}, and cut technical onboarding from \textit{30 days to hours}.}
+        \item {Drove platform adoption into \textit{high-criticality GxP-regulated environments} on a risk-based governance approach, reducing delivery times from \textit{weeks to hours} while keeping compliance intact.}
+        \item {Applied \textit{Team Topologies} to design platform, enabling, and stream-aligned team interactions across the organization, defining self-service interfaces and collaboration boundaries to optimize flow.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {Chief IT Platforms Enterprise Architect \& IT Capability Lead} % Job title
+    {} % Organization
+    {} % Location
+    {Apr. 2019 - Sep. 2022} % Date(s)
+    {
+      \begin{cvitems}
+        \item {Led the \textit{target architecture} for a strategic \textit{cloud-native DevSecOps platform} and unified delivery process, serving software engineers, testers, and compliance experts while balancing flexibility with hard compliance requirements.}
+        \item {Drove \textit{convergence of IT standards} into a \textit{GxP-compliant delivery process}, giving teams a single path from idea to production. Co-founded the \textit{IT Engineering Academy} and founded a \textit{conference} reaching \textit{800+ attendees} by its third edition.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {Founder \& Principal Consultant} % Job title
+    {GetCloudnative} % Organization
+    {Linz, Austria} % Location
+    {May 2018 - Sep. 2019} % Date(s)
+    {
+      \begin{cvprose}
+      Cloud-native architecture and Agile transformation consulting. The Boehringer Ingelheim engagement led to a permanent senior role. Designed and facilitated the founding innovation workshop for Boehringer's \textit{IT Cloud Center of Excellence} (15 people), setting its vision, strategy, and operating model, and built reusable \textit{infrastructure-as-code building blocks} (Ansible, Terraform) for self-service.
+      \end{cvprose}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {Senior Technology Strategist / Lead, Innovation Lab} % Job title
+    {Dynatrace} % Organization
+    {Linz, Austria} % Location
+    {Mar. 2014 - Feb. 2018} % Date(s)
+    {
+      \begin{cvitems}
+        \item {Led strategic innovation at the Innovation Lab of a \textit{multi-year Gartner Magic Quadrant leader}, reporting to \textit{C-level}. Scouted, assessed, and adopted emerging cloud-native technologies (OpenShift, Kubernetes, Docker, Cloud Foundry), several reaching \textit{vendor partner status} and released as open source on GitHub.}
+        \item {Built technology partnerships and joint go-to-market with \textit{Red Hat and Opscode}; partnered with \textit{Fortune 1000} customers and Gartner and Forrester analysts to shape product direction; evangelized \textit{AI-driven observability} to global C-level audiences and scaled a global technical enablement program for the sales engineering community.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {Senior Software Engineer} % Job title
+    {Smarter Ecommerce} % Organization
+    {Linz, Austria} % Location
+    {Sep. 2011 - Jan. 2014} % Date(s)
+    {
+      \begin{cvprose}
+      Built software products for automated pay-per-click advertising, focused on \textit{data engineering and data visualization}.
+      \end{cvprose}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {Systems and Software Architect} % Job title
+    {StreamUnlimited - Embedded Streaming Technology} % Organization
+    {Vienna, Austria} % Location
+    {Jul. 2006 - Jul. 2011} % Date(s)
+    {
+      \begin{cvprose}
+      Led requirements elicitation, architecture, and engineering for global enterprise customers in the consumer electronics and healthcare industries, including Bang \& Olufsen, Hitachi, and Philips Speech Processing. Co-architected a \textit{high-availability computation cluster} (Linux-HA) hosting an ML-based recommender, and introduced \textit{Continuous Integration} to the delivery lifecycle.
+      \end{cvprose}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {Open Source Contributor and Maintainer} % Job title
+    {GitHub} % Organization
+    {} % Location
+    {2010 - PRESENT} % Date(s)
+    {
+      \begin{cvprose}
+      Co-maintained {\color{awesome}\href{https://github.com/terraform-docs/terraform-docs}{terraform-docs}}, which grew into a \textit{community standard} with \textit{4,000+ GitHub stars}. Contributed to Kubernetes, Homebrew, d3.js, and Linux-HA.
+      \end{cvprose}
+    }
+
+%---------------------------------------------------------
+\end{cventries}
